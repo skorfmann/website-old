@@ -45,9 +45,6 @@ const path = require("path");
       const title = document.querySelector("h1");
       title.innerHTML = post.title;
 
-      const time = document.querySelector("time");
-      time.innerHTML = post.date;
-
       // If you have other data to insert,
       // find the DOM elements and update that here
     }, post);
