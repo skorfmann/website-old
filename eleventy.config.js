@@ -9,7 +9,7 @@ module.exports = eleventyConfig => {
     eleventyConfig.addNunjucksShortcode("twitter", function(tweetId) {
         const domId = `tweet-${tweetId}`
         return `
-<div class="flex justify-center">
+<div class="flex lg:justify-center">
 <div id="${domId}" tweetID="${tweetId}"></div>
 </div>
 <script>
