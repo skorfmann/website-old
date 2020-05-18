@@ -53,11 +53,11 @@ module.exports = eleventyConfig => {
 
     eleventyConfig.addShortcode("github", function(slug) {
         return outdent`
-            <div class="flex items-center mb-4 px-5 py-3 border-solid border-grey-light rounded border shadow-md text-2xl font-medium">
-                <svg class="inline mr-5" fill="currentColor" role="img" aria-hidden="true" width="50" height="50">
+            <div class="flex items-center justify-center mb-4 py-3 rounded">
+                <svg fill="currentColor" role="img" aria-hidden="true" width="50" height="50">
                     <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/icons/icon-library.svg#icon-github"></use>
                 </svg>
-                <a class="" href="https://www.github.com/${slug}" target="_blank">${slug}</a>
+                <a class="text-2xl font-medium" href="https://www.github.com/${slug}" target="_blank">${slug}</a>
             </div>`
     })
 
