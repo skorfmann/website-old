@@ -16,9 +16,10 @@ module.exports = eleventyConfig => {
     eleventyConfig.addPlugin(embeds);
     eleventyConfig.addPlugin(excerpt);
     eleventyConfig.addNunjucksShortcode("twitter", function(tweetId) {
+        const domId = `tweet-${tweetId}`
         return `
 <div class="flex justify-center">
-<div id="tweet" tweetID="${tweetId}"></div>
+<div id="${domId}" tweetID="${tweetId}"></div>
 </div>
 <script sync src="https://platform.twitter.com/widgets.js"></script>
 
@@ -26,7 +27,7 @@ module.exports = eleventyConfig => {
 
     window.onload = (function(){
 
-    var tweet = document.getElementById("tweet");
+    var tweet = document.getElementById("${domId}");
     var id = tweet.getAttribute("tweetID");
 
     twttr.widgets.createTweet(

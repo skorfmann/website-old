@@ -7,7 +7,6 @@ tags:
     - terraform
 ---
 
-
 Terrastack enables you to keep using [Terraform](https://terraform.io) as engine, while defining your resources in actual programming languages such as Typescript, Python, Java or C# - with more to come (perhaps [Ruby](https://github.com/aws/jsii/issues/144)?).
 
 This is made possible by the [Cloud Development Kit (CDK)](https://aws.amazon.com/cdk/) and [jsii](https://github.com/aws/jsii/) for generating the polyglot libraries. While the major use-case for the CDK is generating Cloudformation configuration as YAML, it's capable of generating pretty much any configuration.
@@ -75,8 +74,8 @@ From the initial very rough prototype, it took about a week to release a bit mor
 
 {% twitter "1237848600354254849" %}
 
-{% github "TerraStackIO/terrastack" %}
-
 Please check it out and give it a try. I would love to get feedback!
+
+{% github "TerraStackIO/terrastack" %}
 
 This is the first post of a series regarding Terrastack. In the next post, I'll dive a bit deeper into the internals of the CDK itself and what I've learned about its mechanics so far.
