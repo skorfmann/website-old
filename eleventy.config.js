@@ -12,15 +12,10 @@ module.exports = eleventyConfig => {
 <div class="flex justify-center">
 <div id="${domId}" tweetID="${tweetId}"></div>
 </div>
-<script sync src="https://platform.twitter.com/widgets.js"></script>
-
 <script>
-
-    window.onload = (function(){
-
+    window.twttr.ready(function() {
     var tweet = document.getElementById("${domId}");
     var id = tweet.getAttribute("tweetID");
-
     twttr.widgets.createTweet(
         id, tweet,
         {
