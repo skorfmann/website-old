@@ -1,0 +1,12 @@
+---
+permalink: functions/posts.json
+permalinkBypassOutputDir: true
+---
+
+[{% for post in collections.blog %}
+    {
+   "title":"{{post.data.title | jsonTitle}}",
+   "slug":"{{post.data.title | slug}}",
+   "date":"{{post.data.date | dateDisplay}}"
+    }{% if forloop.last == false %},{% endif %}
+{% endfor %}]

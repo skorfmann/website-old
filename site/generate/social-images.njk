@@ -1,0 +1,47 @@
+---
+permalink: functions/template.html
+permalinkBypassOutputDir: true
+---
+
+<!doctype html>
+<html lang="en" class="min-h-full antialiased">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% set css %}
+      {% include "css/main.css" %}
+    {% endset %}
+
+    <style>
+      {{ css | safe }}
+    </style>
+</head>
+
+<body {% if body_class %} id="{{ body_class }}"{% endif %} class="text-purple-900 leading-normal text-lg bg-gray-100">
+  <main id="main" class="main inner flex flex-1 flex-col py-10 lg:py-20 focus:outline-none" tabindex="-1">
+      <article id="container-centre" class="column centre flex-1">
+          <div class="mb-12 md:mb-20">
+              <header>
+                  <h1 class="page-title text-3xl md:text-center md:text-5xl lg:text-6xl">Placeholder Title</h1>
+              </header>
+              <div class="text-sm md:text-base text-gray-600 flex justify-center">
+                  <p class="author">By {{ site.author.name }}</p>
+                  <p class="px-2">—</p>
+                  <time>
+                  </time>
+                  <div id="tags"></div>
+              </div>
+              <div class="mt-10 flex items-center justify-center">
+                <div class="w-20 h-20 relative mb-4 mr-4">
+                  <div class="w-full h-full rounded-full overflow-hidden shadow-inner text-center bg-purple table cursor-pointer">
+                    <img src="https://epic-edison-29e24f.netlify.app/images/blog/author.jpg" srcset="https://epic-edison-29e24f.netlify.app/images/blog/author.jpg 2x" alt="Sebastian Korfmann" class="object-cover object-center w-full h-full visible" />
+                  </div>
+                </div>
+
+                <h2 class="lead">skorfmann.com</h2>
+              </div>
+          </div>
+      </article>
+  </main>
+</body>
+</html>

@@ -3,16 +3,7 @@ const embeds = require("eleventy-plugin-embed-everything");
 const excerpt = require('eleventy-plugin-excerpt');
 const outdent = require('outdent')
 
-const mapping = { }
-const markdownItClass = require('@toycode/markdown-it-class')
-let markdownIt = require("markdown-it");
-let options = {
-  html: true
-};
-let markdownLib = markdownIt(options).use(markdownItClass, mapping);
-
 module.exports = eleventyConfig => {
-    eleventyConfig.setLibrary("md", markdownLib);
     eleventyConfig.addPlugin(embeds);
     eleventyConfig.addPlugin(excerpt);
     eleventyConfig.addNunjucksShortcode("twitter", function(tweetId) {
@@ -43,6 +34,10 @@ module.exports = eleventyConfig => {
 </script>
 `
     });
+
+    eleventyConfig.addFilter("jsonTitle", (str) => {
+        return str.replace(/"(.*)"/g, '\\"$1\\"');
+      });
 
     eleventyConfig.addShortcode("gist", function(url, file) {
         if (file) {
