@@ -1,10 +1,10 @@
 {
-    "name": "Skeleventy",
-    "url": "https://skeleventy.netlify.com",
+    "name": "skorfmann.com",
+    "url": "https://skorfmann.com",
     "author": {
-        "name": "Max Power",
-        "email": "hello@maxpower.com",
-        "handle": "@maxpower",
+        "name": "Sebastian Korfmann",
+        "email": "sebastian@korfmann.net",
+        "handle": "@skorfmann",
         "avatar": "/images/blog/author.jpg"
     },
     "images": {
@@ -14,20 +14,16 @@
         "og": "/images/meta/og.jpg"
     },
     "social_links": {
-        "facebook": "https://www.facebook.com",
-        "twitter": "https://twitter.com/joe_dyer1",
-        "linkedin": "https://www.linkedin.com"
+        "twitter": "https://twitter.com/skorfmann",
+        "linkedin": "https://www.linkedin.com/in/skorfmann"
     },
     "address": {
-        "street": "123 Fake Street",
-        "street_2": "Fake Road",
-        "city": "London",
-        "postcode": "LN1 234",
-        "country": "GB"
+        "street": "Parkallee 7",
+        "city": "Hamburg",
+        "postcode": "20144",
+        "country": "DE"
     },
     "contact": {
-        "phone": "123 456 789",
-        "mobile": "(+44) 1234 5678",
-        "email": "hello@maxpower.com"
+        "email": "sebastian@korfmann.net"
     }
 }

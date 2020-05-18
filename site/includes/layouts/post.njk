@@ -67,14 +67,14 @@ layout: default
 
         </div>
 
-        <div class="content post md:px-16">
-
-            {{ content | safe }}
+        <div class="content post shadow-md pb-4 md:px-16">
+            <div class="markdown">
+                {{ content | safe }}
+            </div>
 
             {# category links list #}
             {% if tags %}
-
-                <ul class="flex pt-4">
+                <ul class="flex list-none pt-4">
 
                     {% for item in tags %}
 
@@ -89,10 +89,9 @@ layout: default
                     {% endfor %}
 
                 </ul>
-
             {% endif %}
-
         </div>
+
 
         <div class="mt-16 md:px-16">
 

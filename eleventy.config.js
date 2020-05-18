@@ -1,6 +1,65 @@
 const htmlmin = require("html-minifier")
+const embeds = require("eleventy-plugin-embed-everything");
+const excerpt = require('eleventy-plugin-excerpt');
+const outdent = require('outdent')
+
+const mapping = { }
+const markdownItClass = require('@toycode/markdown-it-class')
+let markdownIt = require("markdown-it");
+let options = {
+  html: true
+};
+let markdownLib = markdownIt(options).use(markdownItClass, mapping);
 
 module.exports = eleventyConfig => {
+    eleventyConfig.setLibrary("md", markdownLib);
+    eleventyConfig.addPlugin(embeds);
+    eleventyConfig.addPlugin(excerpt);
+    eleventyConfig.addNunjucksShortcode("twitter", function(tweetId) {
+        return `
+<div class="flex justify-center">
+<div id="tweet" tweetID="${tweetId}"></div>
+</div>
+<script sync src="https://platform.twitter.com/widgets.js"></script>
+
+<script>
+
+    window.onload = (function(){
+
+    var tweet = document.getElementById("tweet");
+    var id = tweet.getAttribute("tweetID");
+
+    twttr.widgets.createTweet(
+        id, tweet,
+        {
+        conversation : 'none',    // or all
+        cards        : 'visible',  // or visible
+        linkColor    : '#cc0000', // default is blue
+        theme        : 'light'    // or dark
+        })
+    });
+
+</script>
+`
+    });
+
+    eleventyConfig.addShortcode("gist", function(url, file) {
+        if (file) {
+            return outdent`<script src="${url}.js?file=${file}"></script>`
+        } else {
+            return outdent`<script src="${url}.js"></script>`
+        }
+    })
+
+    eleventyConfig.addShortcode("github", function(slug) {
+        return outdent`
+            <div class="flex items-center mb-4 px-5 py-3 border-solid border-grey-light rounded border shadow-md text-2xl font-medium">
+                <svg class="inline mr-5" fill="currentColor" role="img" aria-hidden="true" width="50" height="50">
+                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/icons/icon-library.svg#icon-github"></use>
+                </svg>
+                <a class="" href="https://www.github.com/${slug}" target="_blank">${slug}</a>
+            </div>`
+    })
 
     // Add a readable date formatter filter to Nunjucks
     eleventyConfig.addFilter("dateDisplay", require("./filters/dates.js"))
