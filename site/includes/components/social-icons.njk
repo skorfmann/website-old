@@ -1,9 +1,19 @@
-<ul class="flex justify-center">
+<ul class="flex justify-center items-center">
+    <li class="ml-4">
+        <a href="/imprint" class="block text-gray-500 hover:text-pink-500">
+            Imprint
+        </a>
+    </li>
+
+    <li class="ml-4">
+        <a href="/privacy" class="block text-gray-500 hover:text-pink-500">
+            Privacy
+        </a>
+    </li>
 
     {% for icon, link in site.social_links %}
 
     <li class="ml-4">
-
         <a href="{{ link | safe }}" class="block text-gray-500 hover:text-pink-500" target="_blank" rel="noopener noreferrer">
 
             <span class="sr-only">Find me on {{ icon }}</span>
