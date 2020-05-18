@@ -1,12 +1,22 @@
 <div class="footer-wrapper">
+    <div id="newsletter" class="bg-gray-100 md:flex justify-center px-6 py-10">
+        <div class="w-full max-w-sm" id="revue-embed">
+            <h3 class="text-purple-900 pb-8 md:pb-0">Sign up to my newsletter <a href="https://www.cdkweekly.com" target="_blank">cdkweekly.com</a></h3>
+            <form  action="http://www.cdkweekly.com/add_subscriber" method="post" id="revue-form" name="revue-form"  target="_blank">
+            <div class="flex items-center border-b border-b-2 border-purple-900 py-2">
+                <input class="appearance-none bg-transparent border-none w-full text-gray-700 mr-3 py-1 px-2 leading-tight focus:outline-none" placeholder="Your email address..." type="email" name="member[email]" id="member_email">
+                <button class="flex-shrink-0 bg-pink-500 hover:bg-pink-700 border-pink-500 hover:border-pink-700 text-sm border-4 text-white py-1 px-2 rounded" type="button">
+                    Subscribe
+                </button>
+            </form>
+        </div>
+    </div>
 
     <footer id="footer" class="footer bg-gray-200">
 
         <div class="footer-inner container m-auto md:flex justify-between items-center px-6 py-10">
 
             <p class="text-purple-900 pb-8 md:pb-0">© 2020 Sebastian Korfmann</p>
-
-            <p class="text-purple-900 pb-8 md:pb-0">Check out my newsletter: <a href="https://www.cdkweekly.com" target="_blank">cdkweekly.com</a></p>
 
             {% include 'components/social-icons.njk' %}
 
